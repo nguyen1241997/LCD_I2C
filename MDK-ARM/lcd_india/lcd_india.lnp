@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp
+"lcd_india\startup_stm32f407xx.o"
+"lcd_india\main.o"
+"lcd_india\stm32f4xx_it.o"
+"lcd_india\stm32f4xx_hal_msp.o"
+"lcd_india\stm32f4xx_hal_i2c.o"
+"lcd_india\stm32f4xx_hal_i2c_ex.o"
+"lcd_india\stm32f4xx_hal_tim.o"
+"lcd_india\stm32f4xx_hal_tim_ex.o"
+"lcd_india\stm32f4xx_hal_rcc.o"
+"lcd_india\stm32f4xx_hal_rcc_ex.o"
+"lcd_india\stm32f4xx_hal_flash.o"
+"lcd_india\stm32f4xx_hal_flash_ex.o"
+"lcd_india\stm32f4xx_hal_flash_ramfunc.o"
+"lcd_india\stm32f4xx_hal_gpio.o"
+"lcd_india\stm32f4xx_hal_dma_ex.o"
+"lcd_india\stm32f4xx_hal_dma.o"
+"lcd_india\stm32f4xx_hal_pwr.o"
+"lcd_india\stm32f4xx_hal_pwr_ex.o"
+"lcd_india\stm32f4xx_hal_cortex.o"
+"lcd_india\stm32f4xx_hal.o"
+"lcd_india\lcd_i2cmodule.o"
+"lcd_india\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "lcd_india\lcd_india.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "lcd_india.map" -o lcd_india\lcd_india.axf
