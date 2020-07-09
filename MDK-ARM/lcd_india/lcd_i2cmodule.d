@@ -22,6 +22,8 @@ lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpi
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h
+lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -29,5 +31,7 @@ lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+lcd_india\lcd_i2cmodule.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 lcd_india\lcd_i2cmodule.o: ..\library\lcd_userConf.h
 lcd_india\lcd_i2cmodule.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

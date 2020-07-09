@@ -1,17 +1,6 @@
-/**
-*@file: lcd_i2cModule.c
-*@brief: Character lcd i2c stm32 hal driver
-*@author: Veysel Gökdemir, © 2018
-*@note: This library is compatible with the LCD Displays that have similarities(pinouts, conf., ddram address...) with HD44780, KS0066U, etc.
-* The library has been tested on the lcd 16x2.
-*/
-
-/*Includes---------------------------------------------------------*/
 #include "lcd_i2cModule.h"
 #include "lcd_userConf.h"
 #include <string.h>
-
-/*-----------------------------------------------------------------*/
 
 /*Defines and variables--------------------------------------------*/
 #ifdef LCD_16x2
@@ -63,13 +52,6 @@ static uint8_t data[4], data_M, data_L, data_BL;
 static uint8_t line_pos = 1; //hold line position, default is 1. line.
 static uint8_t str_len = 0; //follow the string lenght.
 
-/*-----------------------------------------------------------------*/
-
-/*Private functions------------------------------------------------*/
-/**
-*@brief: Lcd i2c device check.
-*@retval: none
-*/
 void LCD_i2cDeviceCheck(void)
 {
 	/* Checks if target device is ready for communication. */
@@ -78,14 +60,9 @@ void LCD_i2cDeviceCheck(void)
 	hi2cx_define();
 	while (HAL_I2C_IsDeviceReady(&hi2cx, i2cDeviceAddr, 3, 1000) != HAL_OK) 
 	{	
-		
 	}
 }
 
-/**
-*@brief: Send commands to lcd.
-*@retval: none
-*/
 void LCD_Set_Command(uint8_t cmd)
 {
 	data_M = cmd & Mask_Data;        //Most significant bit
@@ -104,10 +81,7 @@ void LCD_Set_Command(uint8_t cmd)
 	HAL_I2C_Master_Transmit(&hi2cx, i2cDeviceAddr, (uint8_t*)data, 4, 200);
 }
 
-/**
-*@brief: Write data to lcd.
-*@retval: none
-*/
+
 void LCD_Write_Data(uint8_t datax)
 {
 	data_M = datax & Mask_Data;        //Most significant bit
@@ -126,10 +100,7 @@ void LCD_Write_Data(uint8_t datax)
 	HAL_I2C_Master_Transmit(&hi2cx, i2cDeviceAddr, (uint8_t*)data, 4, 200);
 }
 
-/**
-*@brief: Clear lcd display.
-*@retval: none
-*/
+
 void LCD_Clear(void)
 {
 	LCD_Set_Command(LCD_CLEAR_DISPLAY);
@@ -138,11 +109,7 @@ void LCD_Clear(void)
 	line_pos = 1;
 }
 
-/**
-*@brief: Set lcd cursor position.
-*@param: line_x: line no, chr_x: character no.
-*@retval: none
-*/
+
 void LCD_SetCursor(int line_x, int chr_x)
 {
   line_pos = line_x; //hold line position.	
@@ -153,11 +120,7 @@ void LCD_SetCursor(int line_x, int chr_x)
 	}
 }
 
-/**
-*@brief: Send string data to lcd.
-*@param: str[]: string array, mode: str slide/noslide.
-*@retval: none
-*/
+
 void LCD_Print_String(char str[])
 {	 
   str_len = 0;
@@ -173,11 +136,7 @@ void LCD_Print_String(char str[])
 	}				
 }
 
-/**
-*@brief: Print value, ch to lcd.
-*@param: *ch: "string + %f", value: float data variable
-*@retval: none
-*/
+
 void LCD_Print_Data(char const *ch, float value)
 {
 	char data_ch[BFR_MAX]; //default data size:100.
@@ -186,11 +145,7 @@ void LCD_Print_Data(char const *ch, float value)
 	LCD_Print_String(data_ch);	
 }
 
-/**
-*@brief: Backlight control
-*@param: light_state: BL on/off
-*@retval: none
-*/
+
 void LCD_BackLight(uint8_t light_state)
 {
 	if(light_state == LCD_BL_ON)
@@ -205,10 +160,7 @@ void LCD_BackLight(uint8_t light_state)
 	}
 }
 
-/**
-*@brief: Lcd initiliazing settings.
-*@retval: none
-*/
+
 void LCD_Init(void)
 {
 	LCD_Set_Command(LCD_CLEAR_DISPLAY);

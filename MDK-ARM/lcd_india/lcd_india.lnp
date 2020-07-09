@@ -3,6 +3,9 @@
 "lcd_india\main.o"
 "lcd_india\stm32f4xx_it.o"
 "lcd_india\stm32f4xx_hal_msp.o"
+"lcd_india\lcd_i2cmodule.o"
+"lcd_india\stm32f4xx_hal_adc.o"
+"lcd_india\stm32f4xx_hal_adc_ex.o"
 "lcd_india\stm32f4xx_hal_i2c.o"
 "lcd_india\stm32f4xx_hal_i2c_ex.o"
 "lcd_india\stm32f4xx_hal_tim.o"
@@ -19,7 +22,6 @@
 "lcd_india\stm32f4xx_hal_pwr_ex.o"
 "lcd_india\stm32f4xx_hal_cortex.o"
 "lcd_india\stm32f4xx_hal.o"
-"lcd_india\lcd_i2cmodule.o"
 "lcd_india\system_stm32f4xx.o"
 --library_type=microlib --strict --scatter "lcd_india\lcd_india.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
